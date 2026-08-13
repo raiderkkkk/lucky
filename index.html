@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PS1 World — Fondo del Mundo Retro</title>
+  <!-- Fuente bitmap para el texto del cartel -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    /* Reset total: el canvas ocupa toda la pantalla */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #000;
+      overflow: hidden;         /* Sin scroll */
+      font-family: 'Courier New', monospace;
+    }
+
+    /* Hint de instrucciones — se oculta al bloquear el cursor */
+    #hint {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #ff4444;
+      font-size: 13px;
+      letter-spacing: 0.05em;
+      text-shadow: 0 0 8px #ff0000;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+      z-index: 10;
+      white-space: nowrap;
+    }
+
+    /* Título retro en la esquina */
+  </style>
+  <script type="module" crossorigin src="./assets/index-DdFgQS17.js"></script>
+</head>
+<body>
+  <!-- El canvas de Three.js se inserta aquí desde renderer.js -->
+
+  <!-- Módulo principal: Vite lo empaqueta con todas las dependencias -->
+</body>
+</html>
