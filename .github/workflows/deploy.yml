@@ -5,6 +5,9 @@
 # Se activa en cada push a la rama main.
 # Instala dependencias, construye el proyecto y despliega
 # la carpeta dist/ a la rama gh-pages.
+#
+# Nota: se declara `permissions: contents: write` para que el
+# GITHUB_TOKEN pueda pushear a la rama gh-pages (sin esto da 403).
 # ============================================================
 
 name: Deploy PS1 World to GitHub Pages
@@ -13,6 +16,9 @@ on:
   push:
     branches: [main]
   workflow_dispatch:   # Permite ejecutar manualmente desde GitHub UI
+
+permissions:
+  contents: write    # Necesario para pushear a la rama gh-pages
 
 jobs:
   build-and-deploy:
@@ -23,11 +29,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # 2. Configurar Node.js
+      # 2. Configurar Node.js (20 está deprecado; usamos 24)
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '24'
           cache: 'npm'
 
       # 3. Instalar dependencias
